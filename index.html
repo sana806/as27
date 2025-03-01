@@ -1,0 +1,35 @@
+<!DOCTYPE html><html><head><title>word translator</title>
+    <style>  body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: antiquewhite;  }
+        input, button {
+            padding: 10px;
+            margin: 10px; 
+            border-radius: 10px;  }
+        .wording{
+            height: 200px;
+            width: 500px;
+            background-color: rgb(21, 65, 212);
+            border-radius: 10px;
+            margin-left: 300px;
+            margin-top: 180px;  }
+        .translator{
+            text-align: center;
+            padding-top: 40px; } </style></head>
+<body>
+    <div class="wording">
+    <h2 class="translator"><b><u>Translate English to Marathi:</u></b></h2>
+    <input type="text" id="englishWord" placeholder="Enter English word">
+    <button onclick="translateWord()" style=" cursor: pointer; background-color: rgb(40, 187, 130);">TRANSLATE</button>
+    <p id="display"></p></div>
+    <script>
+        const dictionary = {
+            "hello": "नमस्ते",   "good": "चांगले",
+  "moon": "चंद्र", "penut" : "शेंगदाणे",  "college": "महाविद्यालय"  };
+        function translateWord() {
+            const word = document.getElementById("englishWord").value.toLowerCase();
+            const translation = dictionary[word] || "Translation not found";
+            document.getElementById("display").innerText = translation;   }
+    </script></body></html>
